@@ -1,0 +1,14 @@
+<%= simple_form_for @engineer, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :fullname %>
+  <%= error_span(@engineer[:fullname]) %>
+  <%= f.input :dependency %>
+  <%= error_span(@engineer[:dependency]) %>
+  <%= f.input :studies %>
+  <%= error_span(@engineer[:studies]) %>
+  <%= f.input :proyect_id %>
+  <%= error_span(@engineer[:proyect_id]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                engineers_path, :class => 'btn btn-default' %>
+<% end %>

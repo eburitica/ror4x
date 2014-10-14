@@ -17,7 +17,7 @@
   <tbody>
     <% @engineers.each do |engineer| %>
       <tr>
-        <td><%= link_to engineer.id, engineer_path(engineer) %></td>
+        <td><%= link_to engineer.id, proyect_engineer_path(@proyect,engineer) %></td>
         <td><%= engineer.fullname %></td>
         <td><%= engineer.dependency %></td>
         <td><%= engineer.studies %></td>
@@ -35,11 +35,14 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> 
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_proyect_engineer_path(@proyect),
             :class => 'btn btn-primary' %>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              proyects_path, :class => 'btn'  %>
 
 
 
